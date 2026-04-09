@@ -1,0 +1,139 @@
+/* Academic Style Design System */
+:root {
+    --paper-white: #ffffff;
+    --background: #f8fafc;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent: #2563eb;
+    --border: #e2e8f0;
+    --max-width: 800px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+.paper {
+    background-color: var(--paper-white);
+    max-width: var(--max-width);
+    margin: 4rem auto;
+    padding: 5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+header {
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--text-main);
+    padding-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.meta {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 1.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1rem 0;
+    font-weight: 700;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.abstract {
+    background: #f1f5f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-style: italic;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border);
+}
+
+ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.75rem;
+}
+
+.references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.ref-item {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.ref-item strong {
+    color: var(--text-main);
+}
+
+.doi-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.doi-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Print optimization */
+@media print {
+    body { background: white; }
+    .paper { box-shadow: none; margin: 0; width: 100%; padding: 0; }
+    .doi-link::after { content: " (" attr(href) ")"; font-size: 0.8rem; }
+}
+
+@media (max-width: 768px) {
+    .paper { padding: 2rem; margin: 1rem; }
+    h1 { font-size: 1.8rem; }
+}
